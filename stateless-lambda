@@ -25,7 +25,6 @@ std::ostream& operator<< (std::ostream& os, const Person& p) {
     return os;
 }
 
-
 void test1() {
     std::cout << "\nTest1=============================" << std::endl;
     std::string hello{ "Hello" };
@@ -36,8 +35,26 @@ void test1() {
     [](int x, int y) {std::cout << x + y << std::endl; } (100, 200);
 }
 
+void test2() {
+    std::cout << "\nTest2===============================" << std::endl;
+    auto l1 = []() {std::cout << "Hello I'm a lambda expression." << std::endl; };
+    l1();
+    int num1{ 100 };
+    int num2{ 200 };
+    auto l2 = [](int x, int y) { std::cout << x + y << std::endl; };
+    l2(10, 20);
+    auto l3 = [](int& x, int y) {
+        std::cout << "X: " << x << " Y: " << y << std::endl;
+        x = 1000;
+        y = 2000;
+    };
+    l3(num1, num2);
+    std::cout << "Num1: " << num1 << ", Num2: " << num2 << std::endl;
+}
+
 int main()
 {
     test1();
+    test2();
     return 0;
 }
