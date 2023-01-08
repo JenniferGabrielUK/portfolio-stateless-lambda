@@ -19,3 +19,8 @@ public:
     int get_age() const { return age; }
     void set_age(int age) { this->age = age; }
 };
+
+std::ostream& operator<< (std::ostream& os, const Person& p) {
+    os << p.name << ": " << p.age << " ";
+    return os;
+}
