@@ -92,10 +92,26 @@ void test3() {
     l7(account_2);
 }
 
+//using std::function as parameter in C++14 or
+//auto as parameter in type in C++20
+void filter_vector(const std::vector<int>& vec, std::function<bool(int)> func) {
+    std::cout << "[";
+    for (int i : vec) {
+        if (func(i))
+            std::cout << "]" << std::endl;
+    }
+}
+
+void test4() {
+    std::cout << "\nTest4=============================" << std::endl;
+
+}
+
 int main()
 {
     test1();
     test2();
     test3();
+    test4();
     return 0;
 }
