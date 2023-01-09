@@ -60,9 +60,29 @@ void test2() {
     std::cout << "Num1: " << num1 << ", Num2: " << num2 << std::endl;
 }
 
+void test3() {
+    std::cout << "\nTest3==============================" << std::endl;
+    Person account_1{ "Jenny", 19 };
+    std::cout << "Class Object:" << std::endl;
+    std::cout << account_1 << std::endl;
+
+    auto l4 = [](Person p) {
+        std::cout << "Lambda cout:" << std::endl;
+        std::cout << p << std::endl;
+    };
+    l4(account_1);
+
+    auto l5 = [](const Person& p) {
+        std::cout << "Lambda by reference:" << std::endl;
+        std::cout << p << std::endl;
+    };
+    l5(account_1);
+}
+
 int main()
 {
     test1();
     test2();
+    test3();
     return 0;
 }
