@@ -98,8 +98,9 @@ void filter_vector(const std::vector<int>& vec, std::function<bool(int)> func) {
     std::cout << "[";
     for (int i : vec) {
         if (func(i))
-            std::cout << "]" << std::endl;
+            std::cout << i << " ";
     }
+    std::cout << "]" << std::endl;
 }
 
 void test4() {
