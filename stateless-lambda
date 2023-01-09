@@ -126,6 +126,21 @@ void test5() {
     l5();
 }
 
+void test6() {
+    std::cout << "\nTest6=============================" << std::endl;
+    auto l6 = [](auto x, auto y) {
+        std::cout << "X: " << x << " Y: " << y << std::endl;
+    };
+    l6(10, 20);
+    l6(100.3, 200);
+    l6(12.5, 15.54);
+
+    auto l6_1 = [](auto x, auto y, auto z) {
+        std::cout << "X: " << x << " Y: " << y << " Z: " << z << std::endl;
+    };
+    l6_1(Person("Jenny", 19), Person("Elizabeth", 21), Person("Gabriel", 33));
+}
+
 int main()
 {
     test1();
@@ -133,5 +148,6 @@ int main()
     test3();
     test4();
     test5();
+    test6();
     return 0;
 }
