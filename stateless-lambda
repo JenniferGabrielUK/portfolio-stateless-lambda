@@ -63,6 +63,7 @@ void test2() {
 void test3() {
     std::cout << "\nTest3==============================" << std::endl;
     Person account_1{ "Jenny", 19 };
+    Person account_2{"Elizabeth", 21};
     std::cout << "Class Object:" << std::endl;
     std::cout << account_1 << std::endl;
 
@@ -77,6 +78,14 @@ void test3() {
         std::cout << p << std::endl;
     };
     l5(account_1);
+      auto l6 = [](Person& p) {
+        p.set_name("Gabriel");
+        p.set_age(33);
+        std::cout << p << std::endl;
+    };
+    l6 (account_1);
+    std::cout << account_1 << std::endl;
+}
 }
 
 int main()
