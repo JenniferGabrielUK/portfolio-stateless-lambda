@@ -134,7 +134,7 @@ void test6() {
     l6(10, 20);
     l6(100.3, 200);
     l6(12.5, 15.54);
-
+    l6(Person{ "Jennifer", 22 }, Person{ "Gabriel", 33 });
     auto l6_1 = [](auto x, auto y, auto z) {
         std::cout << "X: " << x << " Y: " << y << " Z: " << z << std::endl;
     };
