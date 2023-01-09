@@ -116,11 +116,22 @@ void test4() {
     filter_vector(nums, [](int x) {return x < 50 && x >30; });
 }
 
+auto make_lambda() {
+    return []() {std::cout << "This lambda was made using the make_lambda function." << std::endl; };
+}
+
+void test5() {
+    std::cout << "\nTest5=============================" << std::endl;
+    auto l5 = make_lambda();
+    l5();
+}
+
 int main()
 {
     test1();
     test2();
     test3();
     test4();
+    test5();
     return 0;
 }
