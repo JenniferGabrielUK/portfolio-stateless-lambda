@@ -105,7 +105,15 @@ void filter_vector(const std::vector<int>& vec, std::function<bool(int)> func) {
 
 void test4() {
     std::cout << "\nTest4=============================" << std::endl;
-
+    std::vector <int> nums{ 10,20,30,40,50,60,70,80,90,100 };
+    
+    filter_vector(nums, [](int x) {return x > 50; });
+    filter_vector(nums, [](int x) {return x < 50; });
+    filter_vector(nums, [](int x) {return x <= 30; });
+    filter_vector(nums, [](int x) {return x <= 50; });
+    filter_vector(nums, [](int x) {return x >= 30 && x <= 60; });
+    filter_vector(nums, [](int x) {return x <= 50 && x >= 30; });
+    filter_vector(nums, [](int x) {return x < 50 && x >30; });
 }
 
 int main()
