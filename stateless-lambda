@@ -84,8 +84,12 @@ void test3() {
         std::cout << p << std::endl;
     };
     l6 (account_1);
-    std::cout << account_1 << std::endl;
-}
+    auto l7 = [](Person& p) {
+        p.set_name("Jennifer");
+        p.set_age(35);
+        std::cout << p << std::endl;
+    };
+    l7(account_2);
 }
 
 int main()
