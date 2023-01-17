@@ -141,6 +141,19 @@ void test6() {
     l6_1(Person("Jenny", 19), Person("Elizabeth", 21), Person("Gabriel", 33));
 }
 
+void test7() {
+    std::cout << "\nTest7=============================" << std::endl;
+    std::vector<Person> accounts{
+        {"Jenny", 19},
+        {"Elizabeth", 21},
+        {"Gabriel", 33}
+    };
+
+    std::sort(begin(accounts), end(accounts), [](const Person& p1, const Person& p2){
+        return p1.get_name() < p2.get_name();
+     });
+}
+
 int main()
 {
     test1();
@@ -149,5 +162,6 @@ int main()
     test4();
     test5();
     test6();
+    test7();
     return 0;
 }
