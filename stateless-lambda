@@ -149,9 +149,14 @@ void test7() {
         {"Gabriel", 33}
     };
 
-    std::sort(begin(accounts), end(accounts), [](const Person& p1, const Person& p2){
+    std::cout << "\nBefore sort names alphabetically." << std::endl;
+    std::for_each(begin(accounts), end(accounts), [](const Person& p) {
+        std::cout << p << std::endl;
+        });
+     std::sort(begin(accounts), end(accounts), [](const Person& p1, const Person& p2){
         return p1.get_name() < p2.get_name();
      });
+     std::cout << "\nAfter sort names alphabetically." << std::endl;
      std::for_each(begin(accounts), end(accounts), [](const Person& p) {
         std::cout << p << std::endl;
         });
